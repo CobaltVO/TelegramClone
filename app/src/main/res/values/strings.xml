@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Telegram Clone</string>
-    <string name="welcome_title_top">The world\'s <b>fastest</b> messaging app.</string>
-    <string name="welcome_title_bottom">It is <b>free</b> and <b>secure</b>.</string>
-    <string name="welcome_button">Start Messaging</string>
+    <string name="frw_welcome_title_top">The world\'s <b>fastest</b> messaging app.</string>
+    <string name="frw_welcome_title_bottom">It is <b>free</b> and <b>secure</b>.</string>
+    <string name="frw_welcome_button">Start Messaging</string>
+    <string name="frw_hint_input_phone_number"><b>--- --- ----</b></string>
 </resources>
