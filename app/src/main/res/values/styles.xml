@@ -6,4 +6,23 @@
         <item name="colorAccent">@color/accent</item>
     </style>
 
+    <style name="inputCodeNumber" parent="Widget.AppCompat.EditText">
+        <item name="android:layout_width">40dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">5dp</item>
+        <item name="android:layout_marginEnd">5dp</item>
+        <item name="android:maxLength">1</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:inputType">number</item>
+    </style>
+
+    <style name="inputCodeUnderline" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_width">40dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">5dp</item>
+        <item name="android:layout_marginEnd">5dp</item>
+        <item name="android:background">@drawable/background_input_code</item>
+    </style>
+
 </resources>

@@ -5,7 +5,6 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.FragmentManager;
 
 import ru.cobalt.telegram.clone.BasicFragment;
 import ru.cobalt.telegram.clone.R;
@@ -26,13 +25,7 @@ public class WelcomeFragment extends BasicFragment implements View.OnClickListen
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.frw_welcome_button:
-                FragmentManager fragmentManager = getFragmentManager();
-                if (fragmentManager != null) {
-                    fragmentManager.beginTransaction()
-                            .replace(R.id.main_container, new EnterPhoneFragment())
-                            .addToBackStack(null)
-                            .commit();
-                }
+                changeFragment(new EnterPhoneFragment());
                 break;
         }
     }

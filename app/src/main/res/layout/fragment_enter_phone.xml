@@ -9,12 +9,12 @@
         layout="@layout/toolbar" />
 
     <!--  TODO list of countries  -->
-    <EditText
-        android:id="@+id/frw_list_of_countries"
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/frw_input_country_name"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_margin="20dp"
-        android:backgroundTint="@drawable/background_input"
+        android:backgroundTint="@drawable/background_input_selector"
         android:text="Russian Federation"
         android:textAlignment="textStart"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,30 +22,32 @@
         app:layout_constraintTop_toBottomOf="@id/frw_layout_toolbar" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/frw_input_phone_container"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_margin="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/frw_list_of_countries">
+        app:layout_constraintTop_toBottomOf="@id/frw_input_country_name">
 
-        <EditText
+        <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/frw_input_country_code"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="5dp"
-            android:backgroundTint="@drawable/background_input"
+            android:backgroundTint="@drawable/background_input_selector"
+            android:inputType="phone"
             android:text="+7"
             app:layout_constraintEnd_toStartOf="@id/frw_input_phone_number"
             app:layout_constraintHorizontal_weight="20"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
+        <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/frw_input_phone_number"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:backgroundTint="@drawable/background_input"
+            android:backgroundTint="@drawable/background_input_selector"
             android:hint="@string/frw_hint_input_phone_number"
             android:inputType="phone"
             app:layout_constraintEnd_toEndOf="parent"

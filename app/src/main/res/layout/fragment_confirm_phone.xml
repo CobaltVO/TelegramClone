@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".frw.ConfirmPhoneFragment">
+
+    <include
+        android:id="@+id/frw_layout_toolbar"
+        layout="@layout/toolbar" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/frw_confirm_phone_icon_code"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_margin="25dp"
+        android:src="@drawable/ic_2fa_code"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/frw_layout_toolbar" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/frw_confirm_phone_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="@string/frw_confirm_phone_title"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/frw_confirm_phone_icon_code" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/frw_confirm_phone_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="@string/frw_confirm_phone_description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/frw_confirm_phone_title" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/frw_confirm_phone_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/default_phone"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/frw_confirm_phone_description" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/frw_confirm_phone_input_code"
+        android:layout_marginTop="25dp"
+        android:layout_width="230dp"
+        android:layout_height="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/frw_confirm_phone_number">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/frw_confirm_phone_input_code_first_number"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            style="@style/inputCodeNumber" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            app:layout_constraintTop_toBottomOf="@id/frw_confirm_phone_input_code_first_number"
+            app:layout_constraintStart_toStartOf="parent"
+            style="@style/inputCodeUnderline" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/frw_confirm_phone_input_code_second_number"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/frw_confirm_phone_input_code_first_number"
+            style="@style/inputCodeNumber" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            app:layout_constraintTop_toBottomOf="@id/frw_confirm_phone_input_code_second_number"
+            app:layout_constraintStart_toEndOf="@id/frw_confirm_phone_input_code_first_number"
+            style="@style/inputCodeUnderline" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/frw_confirm_phone_input_code_third_number"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/frw_confirm_phone_input_code_second_number"
+            style="@style/inputCodeNumber" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            app:layout_constraintTop_toBottomOf="@id/frw_confirm_phone_input_code_third_number"
+            app:layout_constraintStart_toEndOf="@id/frw_confirm_phone_input_code_second_number"
+            style="@style/inputCodeUnderline" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/frw_confirm_phone_input_code_fourth_number"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/frw_confirm_phone_input_code_third_number"
+            style="@style/inputCodeNumber" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            app:layout_constraintTop_toBottomOf="@id/frw_confirm_phone_input_code_fourth_number"
+            app:layout_constraintStart_toEndOf="@id/frw_confirm_phone_input_code_third_number"
+            style="@style/inputCodeUnderline" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/frw_confirm_phone_input_code_fifth_number"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/frw_confirm_phone_input_code_fourth_number"
+            style="@style/inputCodeNumber" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            app:layout_constraintTop_toBottomOf="@id/frw_confirm_phone_input_code_fifth_number"
+            app:layout_constraintStart_toEndOf="@id/frw_confirm_phone_input_code_fourth_number"
+            style="@style/inputCodeUnderline" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="25dp"
+        android:gravity="center"
+        android:text="@string/frw_confirm_phone_by_call"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/frw_confirm_phone_input_code" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

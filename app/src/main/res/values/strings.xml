@@ -4,4 +4,9 @@
     <string name="frw_welcome_title_bottom">It is <b>free</b> and <b>secure</b>.</string>
     <string name="frw_welcome_button">Start Messaging</string>
     <string name="frw_hint_input_phone_number"><b>--- --- ----</b></string>
+    <string name="frw_confirm_phone_title">Enter code</string>
+    <string name="frw_confirm_phone_description">We\'ve sent an SMS with an activation code to your phone</string>
+    <string name="frw_enter_phone_toolbar_title">Your phone</string>
+    <string name="default_phone">+7 (123) 456\-78\-90</string>
+    <string name="frw_confirm_phone_by_call">Telegram will call you in 2:00</string>
 </resources>
