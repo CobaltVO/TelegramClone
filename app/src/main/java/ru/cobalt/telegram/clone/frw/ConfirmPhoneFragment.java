@@ -18,6 +18,8 @@ import ru.cobalt.telegram.clone.main.MainFragment;
 public class ConfirmPhoneFragment extends BasicFragment
         implements CodeInputCompletedListener, View.OnKeyListener {
 
+    private final String KEY_USER_PHONE = "keyUserPhone";
+
     private int[] listNumbersId = {
             R.id.frw_confirm_phone_input_code_first_number,
             R.id.frw_confirm_phone_input_code_second_number,
@@ -26,8 +28,13 @@ public class ConfirmPhoneFragment extends BasicFragment
             R.id.frw_confirm_phone_input_code_fifth_number
     };
     private AppCompatEditText[] listEditTexts = new AppCompatEditText[listNumbersId.length];
+
     private AppCompatTextView textViewPhoneNumber;
     private String userPhone;
+
+    public ConfirmPhoneFragment() {
+        super(R.layout.fragment_confirm_phone);
+    }
 
     public ConfirmPhoneFragment(String phone) {
         super(R.layout.fragment_confirm_phone);
@@ -39,6 +46,9 @@ public class ConfirmPhoneFragment extends BasicFragment
         super.onViewCreated(view, savedInstanceState);
 
         textViewPhoneNumber = view.findViewById(R.id.frw_confirm_phone_number);
+        if (savedInstanceState != null) {
+            userPhone = savedInstanceState.getString(KEY_USER_PHONE);
+        }
         if (userPhone != null) {
             textViewPhoneNumber.setText(userPhone);
         }
@@ -96,5 +106,11 @@ public class ConfirmPhoneFragment extends BasicFragment
             }
         }
         return false;
+    }
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        outState.putString(KEY_USER_PHONE, userPhone);
+        super.onSaveInstanceState(outState);
     }
 }
