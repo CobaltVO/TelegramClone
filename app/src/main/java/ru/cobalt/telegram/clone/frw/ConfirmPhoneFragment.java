@@ -1,11 +1,13 @@
 package ru.cobalt.telegram.clone.frw;
 
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatEditText;
+import androidx.appcompat.widget.AppCompatTextView;
 
 import java.util.Objects;
 
@@ -13,49 +15,86 @@ import ru.cobalt.telegram.clone.BasicFragment;
 import ru.cobalt.telegram.clone.R;
 import ru.cobalt.telegram.clone.main.MainFragment;
 
-public class ConfirmPhoneFragment extends BasicFragment implements CodeInputCompletedListener {
+public class ConfirmPhoneFragment extends BasicFragment
+        implements CodeInputCompletedListener, View.OnKeyListener {
 
-    private AppCompatEditText num1, num2, num3, num4, num5;
+    private int[] listNumbersId = {
+            R.id.frw_confirm_phone_input_code_first_number,
+            R.id.frw_confirm_phone_input_code_second_number,
+            R.id.frw_confirm_phone_input_code_third_number,
+            R.id.frw_confirm_phone_input_code_fourth_number,
+            R.id.frw_confirm_phone_input_code_fifth_number
+    };
+    private AppCompatEditText[] listEditTexts = new AppCompatEditText[listNumbersId.length];
+    private AppCompatTextView textViewPhoneNumber;
+    private String userPhone;
 
-    public ConfirmPhoneFragment() {
+    public ConfirmPhoneFragment(String phone) {
         super(R.layout.fragment_confirm_phone);
+        userPhone = phone;
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        num1 = view.findViewById(R.id.frw_confirm_phone_input_code_first_number);
-        num2 = view.findViewById(R.id.frw_confirm_phone_input_code_second_number);
-        num3 = view.findViewById(R.id.frw_confirm_phone_input_code_third_number);
-        num4 = view.findViewById(R.id.frw_confirm_phone_input_code_fourth_number);
-        num5 = view.findViewById(R.id.frw_confirm_phone_input_code_fifth_number);
 
-        num1.addTextChangedListener(new CodeInputWatcher(num2, this));
-        num2.addTextChangedListener(new CodeInputWatcher(num3, this));
-        num3.addTextChangedListener(new CodeInputWatcher(num4, this));
-        num4.addTextChangedListener(new CodeInputWatcher(num5, this));
-        num5.addTextChangedListener(new CodeInputWatcher(null, this));
+        textViewPhoneNumber = view.findViewById(R.id.frw_confirm_phone_number);
+        if (userPhone != null) {
+            textViewPhoneNumber.setText(userPhone);
+        }
 
-        showKeyboard(view, num1);
+        for (int i = 0; i < listNumbersId.length; i++) {
+            listEditTexts[i] = view.findViewById(listNumbersId[i]);
+            listEditTexts[i].setOnKeyListener(this);
+        }
+
+        for (int i = 0; i < listNumbersId.length; i++) {
+            if (i != listNumbersId.length - 1) {
+                listEditTexts[i].addTextChangedListener(
+                        new CodeInputWatcher(listEditTexts[i + 1], this));
+            } else {
+                listEditTexts[i].addTextChangedListener(
+                        new CodeInputWatcher(null, this));
+            }
+        }
+
+        showKeyboard(view, listEditTexts[0]);
         setToolbarName(view, getString(R.string.frw_confirm_phone_toolbar_title));
         addBackButtonToToolbar(view).setNavigationOnClickListener(v -> goToPreviousFragment());
     }
 
     @Override
     public void onCodeInputCompleted() {
-        String s1 = Objects.requireNonNull(num1.getText()).toString();
-        String s2 = Objects.requireNonNull(num2.getText()).toString();
-        String s3 = Objects.requireNonNull(num3.getText()).toString();
-        String s4 = Objects.requireNonNull(num4.getText()).toString();
-        String s5 = Objects.requireNonNull(num5.getText()).toString();
+        String[] numbers = new String[listEditTexts.length];
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < listEditTexts.length; i++) {
+            numbers[i] = Objects.requireNonNull(listEditTexts[i].getText()).toString();
+        }
 
-        if (!s1.equals("") || !s2.equals("") || !s3.equals("") || !s4.equals("") || !s5.equals("")) {
-            int code = Integer.parseInt(s1 + s2 + s3 + s4 + s5);
-            if (code == 12345) {
-                changeFragment(new MainFragment());
-            }
+        for (String s : numbers) {
+            if (s.equals("")) return;
+            sb.append(s);
+        }
+
+        int code = Integer.parseInt(sb.toString());
+        if (code == 12345) {
+            changeFragment(new MainFragment());
         }
     }
 
-
+    @Override
+    public boolean onKey(View v, int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_DEL && event.getAction() == KeyEvent.ACTION_DOWN) {
+            for (int i = 0; i < listEditTexts.length; i++) {
+                if (listEditTexts[i].length() == 0) {
+                    if (i > 0) {
+                        listEditTexts[i - 1].setText("");
+                        listEditTexts[i - 1].requestFocus();
+                    }
+                    break;
+                }
+            }
+        }
+        return false;
+    }
 }
