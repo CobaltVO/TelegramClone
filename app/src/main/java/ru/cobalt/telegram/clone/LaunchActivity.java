@@ -7,12 +7,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import ru.cobalt.telegram.clone.frw.WelcomeFragment;
 
-public class MainActivity extends AppCompatActivity {
+public class LaunchActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_launch);
         if (savedInstanceState == null) {
             getSupportFragmentManager()
                     .beginTransaction()

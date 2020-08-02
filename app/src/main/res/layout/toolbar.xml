@@ -5,7 +5,7 @@
     android:layout_height="?attr/actionBarSize"
     android:background="@color/primary">
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/toolbar_title"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"

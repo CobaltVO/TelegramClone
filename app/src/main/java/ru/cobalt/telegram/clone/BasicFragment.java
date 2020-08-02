@@ -8,9 +8,10 @@ import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.AppCompatTextView;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 public abstract class BasicFragment extends Fragment {
 
@@ -34,10 +35,19 @@ public abstract class BasicFragment extends Fragment {
     protected void changeFragment(Fragment newFragment) {
         FragmentManager fragmentManager = getFragmentManager();
         if (fragmentManager != null) {
-            FragmentTransaction transaction = fragmentManager.beginTransaction()
+            fragmentManager.beginTransaction()
                     .replace(R.id.main_container, newFragment)
-                    .addToBackStack(null);
-            transaction.commit();
+                    .commit();
+        }
+    }
+
+    protected void changeFragment(Fragment newFragment, String addToBackStackName) {
+        FragmentManager fragmentManager = getFragmentManager();
+        if (fragmentManager != null) {
+            fragmentManager.beginTransaction()
+                    .replace(R.id.main_container, newFragment)
+                    .addToBackStack(addToBackStackName)
+                    .commit();
         }
     }
 
@@ -49,5 +59,28 @@ public abstract class BasicFragment extends Fragment {
         if (imm != null) {
             imm.showSoftInput(editTextView, InputMethodManager.SHOW_IMPLICIT);
         }
+    }
+
+    protected void goToPreviousFragment() {
+        FragmentManager manager = getFragmentManager();
+        if (manager != null) {
+            manager.popBackStack();
+        }
+    }
+
+    protected void setToolbarName(@NonNull View view, String toolbarName) {
+        AppCompatTextView title = view.findViewById(R.id.toolbar_title);
+        title.setText(toolbarName);
+    }
+
+    protected Toolbar addBackButtonToToolbar(@NonNull View view) {
+        Toolbar toolbar = view.findViewById(R.id.frw_layout_toolbar);
+        toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
+        return toolbar;
+    }
+
+    protected void removeBackButtonToToolbar(@NonNull View view) {
+        Toolbar toolbar = view.findViewById(R.id.frw_layout_toolbar);
+        toolbar.setNavigationIcon(null);
     }
 }

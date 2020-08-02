@@ -25,7 +25,7 @@ public class WelcomeFragment extends BasicFragment implements View.OnClickListen
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.frw_welcome_button:
-                changeFragment(new EnterPhoneFragment());
+                changeFragment(new EnterPhoneFragment(), null);
                 break;
         }
     }

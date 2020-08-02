@@ -4,13 +4,16 @@ import android.text.Editable;
 import android.text.TextWatcher;
 
 import androidx.appcompat.widget.AppCompatEditText;
+import androidx.fragment.app.Fragment;
 
-class CodeWatcher implements TextWatcher {
+class CodeInputWatcher implements TextWatcher {
 
     private AppCompatEditText nextNumber;
+    private Fragment context;
 
-    public CodeWatcher(AppCompatEditText nextNumber) {
+    public CodeInputWatcher(AppCompatEditText nextNumber, Fragment context) {
         this.nextNumber = nextNumber;
+        this.context = context;
     }
 
     @Override
@@ -19,14 +22,18 @@ class CodeWatcher implements TextWatcher {
 
     @Override
     public void onTextChanged(CharSequence s, int start, int before, int count) {
+        if (!s.toString().equals("")) {
+            if (nextNumber != null) {
+                nextNumber.requestFocus();
+            } else {
+                if (context instanceof CodeInputCompletedListener) {
+                    ((CodeInputCompletedListener) context).onCodeInputCompleted();
+                }
+            }
+        }
     }
 
     @Override
     public void afterTextChanged(Editable s) {
-        if (!s.toString().equals("")) {
-            if (nextNumber != null) {
-                nextNumber.requestFocus();
-            }
-        }
     }
 }
