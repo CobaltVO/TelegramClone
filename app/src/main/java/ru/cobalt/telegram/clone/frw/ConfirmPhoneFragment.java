@@ -1,5 +1,7 @@
 package ru.cobalt.telegram.clone.frw;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
@@ -13,7 +15,7 @@ import java.util.Objects;
 
 import ru.cobalt.telegram.clone.BasicFragment;
 import ru.cobalt.telegram.clone.R;
-import ru.cobalt.telegram.clone.main.MainFragment;
+import ru.cobalt.telegram.clone.main.MainActivity;
 
 public class ConfirmPhoneFragment extends BasicFragment
         implements CodeInputCompletedListener, View.OnKeyListener {
@@ -88,7 +90,9 @@ public class ConfirmPhoneFragment extends BasicFragment
 
         int code = Integer.parseInt(sb.toString());
         if (code == 12345) {
-            changeFragment(new MainFragment());
+            Activity activity = getActivity();
+            if (activity != null) activity.finish();
+            startActivity(new Intent(getActivity(), MainActivity.class));
         }
     }
 

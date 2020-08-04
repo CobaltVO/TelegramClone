@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/chatsFragment">
+
+    <fragment
+        android:id="@+id/chatsFragment"
+        android:name="ru.cobalt.telegram.clone.main.ChatsFragment"
+        android:label="ChatsFragment" />
+
+    <fragment
+        android:id="@+id/newGroupFragment"
+        android:name="ru.cobalt.telegram.clone.main.nav.NewGroupFragment"
+        android:label="NewGroupFragment" />
+
+    <fragment
+        android:id="@+id/newSecretChatFragment"
+        android:name="ru.cobalt.telegram.clone.main.nav.NewSecretChatFragment"
+        android:label="NewSecretChatFragment" />
+
+    <fragment
+        android:id="@+id/newChannelFragment"
+        android:name="ru.cobalt.telegram.clone.main.nav.NewChannelFragment"
+        android:label="NewChannelFragment" />
+
+    <fragment
+        android:id="@+id/contactsFragment"
+        android:name="ru.cobalt.telegram.clone.main.nav.ContactsFragment"
+        android:label="ContactsFragment" />
+
+    <fragment
+        android:id="@+id/callsFragment"
+        android:name="ru.cobalt.telegram.clone.main.nav.CallsFragment"
+        android:label="CallsFragment" />
+
+    <fragment
+        android:id="@+id/savedMessagesFragment"
+        android:name="ru.cobalt.telegram.clone.main.nav.SavedMessagesFragment"
+        android:label="SavedMessagesFragment" />
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="ru.cobalt.telegram.clone.main.nav.SettingsFragment"
+        android:label="SettingsFragment" />
+
+    <fragment
+        android:id="@+id/inviteFriendsFragment"
+        android:name="ru.cobalt.telegram.clone.main.nav.InviteFriendsFragment"
+        android:label="InviteFriendsFragment" />
+
+    <fragment
+        android:id="@+id/telegramFAQFragment"
+        android:name="ru.cobalt.telegram.clone.main.nav.TelegramFAQFragment"
+        android:label="TelegramFAQFragment" />
+
+</navigation>

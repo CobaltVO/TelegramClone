@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/nav_header_user_photo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:elevation="100dp"
+        app:cardCornerRadius="100dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/placeholder_photo" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/nav_header_toggle_night_mode"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_margin="20dp"
+        android:background="@color/primary"
+        android:paddingStart="15dp"
+        android:src="@drawable/ic_night"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:paddingBottom="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nav_header_user_photo">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/nav_header_user_name"
+            android:layout_width="40dp"
+            android:layout_height="20dp"
+            android:text="Ivan"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/nav_header_user_phone"
+            android:layout_width="200dp"
+            android:layout_height="20dp"
+            android:text="@string/default_phone"
+            android:textColor="@color/light_blue"
+            android:textSize="13sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/nav_header_user_name" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/nav_header_dropdown_menu"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@color/primary"
+            android:scaleX="1.2"
+            android:scaleY="1.2"
+            android:src="@drawable/ic_dropdown_menu"
+            app:layout_constraintBottom_toBottomOf="@+id/nav_header_user_phone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/nav_header_user_name" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

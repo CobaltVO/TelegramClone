@@ -11,7 +11,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 
 public abstract class BasicFragment extends Fragment {
 
@@ -33,22 +32,16 @@ public abstract class BasicFragment extends Fragment {
     }
 
     protected void changeFragment(Fragment newFragment) {
-        FragmentManager fragmentManager = getFragmentManager();
-        if (fragmentManager != null) {
-            fragmentManager.beginTransaction()
-                    .replace(R.id.main_container, newFragment)
-                    .commit();
-        }
+        getParentFragmentManager().beginTransaction()
+                .replace(R.id.main_container, newFragment)
+                .commit();
     }
 
     protected void changeFragment(Fragment newFragment, String addToBackStackName) {
-        FragmentManager fragmentManager = getFragmentManager();
-        if (fragmentManager != null) {
-            fragmentManager.beginTransaction()
-                    .replace(R.id.main_container, newFragment)
-                    .addToBackStack(addToBackStackName)
-                    .commit();
-        }
+        getParentFragmentManager().beginTransaction()
+                .replace(R.id.main_container, newFragment)
+                .addToBackStack(addToBackStackName)
+                .commit();
     }
 
     protected void showKeyboard(@NonNull View fragmentView, View editTextView) {
@@ -62,10 +55,7 @@ public abstract class BasicFragment extends Fragment {
     }
 
     protected void goToPreviousFragment() {
-        FragmentManager manager = getFragmentManager();
-        if (manager != null) {
-            manager.popBackStack();
-        }
+        getParentFragmentManager().popBackStack();
     }
 
     protected void setToolbarName(@NonNull View view, String toolbarName) {

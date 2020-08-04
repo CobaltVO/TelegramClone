@@ -1,11 +1,11 @@
-package ru.cobalt.telegram.clone;
+package ru.cobalt.telegram.clone.frw;
 
 import android.os.Bundle;
 import android.view.WindowManager;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import ru.cobalt.telegram.clone.frw.WelcomeFragment;
+import ru.cobalt.telegram.clone.R;
 
 public class LaunchActivity extends AppCompatActivity {
 

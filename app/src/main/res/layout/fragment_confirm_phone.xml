@@ -57,67 +57,67 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/frw_confirm_phone_input_code"
-        android:layout_marginTop="25dp"
         android:layout_width="230dp"
         android:layout_height="50dp"
+        android:layout_marginTop="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/frw_confirm_phone_number">
 
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/frw_confirm_phone_input_code_first_number"
-            app:layout_constraintTop_toTopOf="parent"
+            style="@style/inputCodeNumber"
             app:layout_constraintStart_toStartOf="parent"
-            style="@style/inputCodeNumber" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            app:layout_constraintTop_toBottomOf="@id/frw_confirm_phone_input_code_first_number"
+            style="@style/inputCodeUnderline"
             app:layout_constraintStart_toStartOf="parent"
-            style="@style/inputCodeUnderline" />
+            app:layout_constraintTop_toBottomOf="@id/frw_confirm_phone_input_code_first_number" />
 
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/frw_confirm_phone_input_code_second_number"
-            app:layout_constraintTop_toTopOf="parent"
+            style="@style/inputCodeNumber"
             app:layout_constraintStart_toEndOf="@id/frw_confirm_phone_input_code_first_number"
-            style="@style/inputCodeNumber" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            app:layout_constraintTop_toBottomOf="@id/frw_confirm_phone_input_code_second_number"
+            style="@style/inputCodeUnderline"
             app:layout_constraintStart_toEndOf="@id/frw_confirm_phone_input_code_first_number"
-            style="@style/inputCodeUnderline" />
+            app:layout_constraintTop_toBottomOf="@id/frw_confirm_phone_input_code_second_number" />
 
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/frw_confirm_phone_input_code_third_number"
-            app:layout_constraintTop_toTopOf="parent"
+            style="@style/inputCodeNumber"
             app:layout_constraintStart_toEndOf="@id/frw_confirm_phone_input_code_second_number"
-            style="@style/inputCodeNumber" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            app:layout_constraintTop_toBottomOf="@id/frw_confirm_phone_input_code_third_number"
+            style="@style/inputCodeUnderline"
             app:layout_constraintStart_toEndOf="@id/frw_confirm_phone_input_code_second_number"
-            style="@style/inputCodeUnderline" />
+            app:layout_constraintTop_toBottomOf="@id/frw_confirm_phone_input_code_third_number" />
 
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/frw_confirm_phone_input_code_fourth_number"
-            app:layout_constraintTop_toTopOf="parent"
+            style="@style/inputCodeNumber"
             app:layout_constraintStart_toEndOf="@id/frw_confirm_phone_input_code_third_number"
-            style="@style/inputCodeNumber" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            app:layout_constraintTop_toBottomOf="@id/frw_confirm_phone_input_code_fourth_number"
+            style="@style/inputCodeUnderline"
             app:layout_constraintStart_toEndOf="@id/frw_confirm_phone_input_code_third_number"
-            style="@style/inputCodeUnderline" />
+            app:layout_constraintTop_toBottomOf="@id/frw_confirm_phone_input_code_fourth_number" />
 
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/frw_confirm_phone_input_code_fifth_number"
-            app:layout_constraintTop_toTopOf="parent"
+            style="@style/inputCodeNumber"
             app:layout_constraintStart_toEndOf="@id/frw_confirm_phone_input_code_fourth_number"
-            style="@style/inputCodeNumber" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            app:layout_constraintTop_toBottomOf="@id/frw_confirm_phone_input_code_fifth_number"
+            style="@style/inputCodeUnderline"
             app:layout_constraintStart_toEndOf="@id/frw_confirm_phone_input_code_fourth_number"
-            style="@style/inputCodeUnderline" />
+            app:layout_constraintTop_toBottomOf="@id/frw_confirm_phone_input_code_fifth_number" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

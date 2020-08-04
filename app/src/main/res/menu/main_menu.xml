@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/newGroupFragment"
+            android:icon="@drawable/ic_new_group"
+            android:title="@string/nav_menu_new_group" />
+
+        <item
+            android:id="@+id/newSecretChatFragment"
+            android:icon="@drawable/ic_new_secret_chat"
+            android:title="@string/nav_menu_new_secret_chat" />
+
+        <item
+            android:id="@+id/newChannelFragment"
+            android:icon="@drawable/ic_new_channel"
+            android:title="@string/nav_menu_new_channel" />
+
+        <item
+            android:id="@+id/contactsFragment"
+            android:icon="@drawable/ic_contacts"
+            android:title="@string/nav_menu_contacts" />
+
+        <item
+            android:id="@+id/callsFragment"
+            android:icon="@drawable/ic_calls"
+            android:title="@string/nav_menu_calls" />
+
+        <item
+            android:id="@+id/savedMessagesFragment"
+            android:icon="@drawable/ic_saved_messages"
+            android:title="@string/nav_menu_saved_messages" />
+
+        <item
+            android:id="@+id/settingsFragment"
+            android:icon="@drawable/ic_settings"
+            android:title="@string/nav_menu_settings" />
+
+        <item
+            android:id="@+id/inviteFriendsFragment"
+            android:icon="@drawable/ic_invite_friends"
+            android:title="@string/nav_menu_invite_friends" />
+
+        <item
+            android:id="@+id/telegramFAQFragment"
+            android:icon="@drawable/ic_telegram_faq"
+            android:title="@string/nav_menu_telegram_faq" />
+    </group>
+</menu>
