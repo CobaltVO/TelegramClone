@@ -23,4 +23,7 @@
     <string name="nav_menu_settings">Settings</string>
     <string name="nav_menu_invite_friends">Invite Friends</string>
     <string name="nav_menu_telegram_faq">Telegram FAQ</string>
+
+    <string name="chats_start_title">Welcome to Telegram</string>
+    <string name="chats_start_help_to_start_message">Start messaging by tapping the pencil button in the bottom right corner</string>
 </resources>

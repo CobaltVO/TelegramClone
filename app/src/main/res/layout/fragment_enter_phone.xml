@@ -4,9 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <include
-        android:id="@+id/frw_layout_toolbar"
-        layout="@layout/toolbar" />
+    <include layout="@layout/main_toolbar" />
 
     <!--  TODO list of countries  -->
     <androidx.appcompat.widget.AppCompatEditText
@@ -19,7 +17,7 @@
         android:textAlignment="textStart"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/frw_layout_toolbar" />
+        app:layout_constraintTop_toBottomOf="@id/main_toolbar" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/frw_input_phone_container"

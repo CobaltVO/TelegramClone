@@ -6,9 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".frw.ConfirmPhoneFragment">
 
-    <include
-        android:id="@+id/frw_layout_toolbar"
-        layout="@layout/toolbar" />
+    <include layout="@layout/main_toolbar" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/frw_confirm_phone_icon_code"
@@ -18,7 +16,7 @@
         android:src="@drawable/ic_2fa_code"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/frw_layout_toolbar" />
+        app:layout_constraintTop_toBottomOf="@id/main_toolbar" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/frw_confirm_phone_title"

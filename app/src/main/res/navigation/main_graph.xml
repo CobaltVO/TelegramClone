@@ -6,52 +6,52 @@
 
     <fragment
         android:id="@+id/chatsFragment"
-        android:name="ru.cobalt.telegram.clone.main.ChatsFragment"
-        android:label="ChatsFragment" />
+        android:name="ru.cobalt.telegram.clone.main.nav.ChatsFragment"
+        android:label="@string/app_name" />
 
     <fragment
         android:id="@+id/newGroupFragment"
         android:name="ru.cobalt.telegram.clone.main.nav.NewGroupFragment"
-        android:label="NewGroupFragment" />
+        android:label="@string/nav_menu_new_group" />
 
     <fragment
         android:id="@+id/newSecretChatFragment"
         android:name="ru.cobalt.telegram.clone.main.nav.NewSecretChatFragment"
-        android:label="NewSecretChatFragment" />
+        android:label="@string/nav_menu_new_secret_chat" />
 
     <fragment
         android:id="@+id/newChannelFragment"
         android:name="ru.cobalt.telegram.clone.main.nav.NewChannelFragment"
-        android:label="NewChannelFragment" />
+        android:label="@string/nav_menu_new_channel" />
 
     <fragment
         android:id="@+id/contactsFragment"
         android:name="ru.cobalt.telegram.clone.main.nav.ContactsFragment"
-        android:label="ContactsFragment" />
+        android:label="@string/nav_menu_contacts" />
 
     <fragment
         android:id="@+id/callsFragment"
         android:name="ru.cobalt.telegram.clone.main.nav.CallsFragment"
-        android:label="CallsFragment" />
+        android:label="@string/nav_menu_calls" />
 
     <fragment
         android:id="@+id/savedMessagesFragment"
         android:name="ru.cobalt.telegram.clone.main.nav.SavedMessagesFragment"
-        android:label="SavedMessagesFragment" />
+        android:label="@string/nav_menu_saved_messages" />
 
     <fragment
         android:id="@+id/settingsFragment"
         android:name="ru.cobalt.telegram.clone.main.nav.SettingsFragment"
-        android:label="SettingsFragment" />
+        android:label="@string/nav_menu_settings" />
 
     <fragment
         android:id="@+id/inviteFriendsFragment"
         android:name="ru.cobalt.telegram.clone.main.nav.InviteFriendsFragment"
-        android:label="InviteFriendsFragment" />
+        android:label="@string/nav_menu_invite_friends" />
 
     <fragment
         android:id="@+id/telegramFAQFragment"
         android:name="ru.cobalt.telegram.clone.main.nav.TelegramFAQFragment"
-        android:label="TelegramFAQFragment" />
+        android:label="@string/nav_menu_telegram_faq" />
 
 </navigation>

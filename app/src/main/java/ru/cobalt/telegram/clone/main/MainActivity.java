@@ -16,8 +16,6 @@ import ru.cobalt.telegram.clone.R;
 
 public class MainActivity extends AppCompatActivity {
 
-    private NavController navController;
-    private DrawerLayout drawer;
     private AppBarConfiguration conf;
 
     @Override
@@ -25,13 +23,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Toolbar toolbar = findViewById(R.id.main_toolbar_layout);
+        Toolbar toolbar = findViewById(R.id.main_toolbar);
         setSupportActionBar(toolbar);
 
-        navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationView navView = findViewById(R.id.nav_view);
 
-        drawer = findViewById(R.id.nav_drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.nav_drawer_layout);
         conf = new AppBarConfiguration.Builder(navController.getGraph())
                 .setOpenableLayout(drawer)
                 .build();

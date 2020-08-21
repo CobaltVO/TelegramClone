@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.widget.AppCompatTextView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
@@ -59,18 +58,18 @@ public abstract class BasicFragment extends Fragment {
     }
 
     protected void setToolbarName(@NonNull View view, String toolbarName) {
-        AppCompatTextView title = view.findViewById(R.id.toolbar_title);
-        title.setText(toolbarName);
+        Toolbar toolbar = view.findViewById(R.id.main_toolbar);
+        toolbar.setTitle(toolbarName);
     }
 
     protected Toolbar addBackButtonToToolbar(@NonNull View view) {
-        Toolbar toolbar = view.findViewById(R.id.frw_layout_toolbar);
+        Toolbar toolbar = view.findViewById(R.id.main_toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
         return toolbar;
     }
 
     protected void removeBackButtonToToolbar(@NonNull View view) {
-        Toolbar toolbar = view.findViewById(R.id.frw_layout_toolbar);
+        Toolbar toolbar = view.findViewById(R.id.main_toolbar);
         toolbar.setNavigationIcon(null);
     }
 }
