@@ -1,4 +1,4 @@
-package ru.cobalt.telegram.clone.main.nav;
+package ru.cobalt.telegram.clone.main.nav.contacts;
 
 import android.os.Bundle;
 import android.view.View;
@@ -12,20 +12,18 @@ import java.util.ArrayList;
 
 import ru.cobalt.telegram.clone.BasicFragment;
 import ru.cobalt.telegram.clone.R;
-import ru.cobalt.telegram.clone.main.nav.contacts.ContactListItem;
-import ru.cobalt.telegram.clone.main.nav.contacts.ContactsAdapter;
 
-public class ChatsFragment extends BasicFragment {
+public class ContactsFragment extends BasicFragment {
 
-    public ChatsFragment() {
-        super(R.layout.fragment_chats);
+    public ContactsFragment() {
+        super(R.layout.fragment_contacts);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
 
-        RecyclerView recyclerView = view.findViewById(R.id.chats_start_contacts_list);
+        RecyclerView recyclerView = view.findViewById(R.id.contacts_start_contacts_list);
         recyclerView.setAdapter(new ContactsAdapter(getDummyContacts()));
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(layoutManager);

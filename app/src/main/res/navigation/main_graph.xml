@@ -26,7 +26,7 @@
 
     <fragment
         android:id="@+id/contactsFragment"
-        android:name="ru.cobalt.telegram.clone.main.nav.ContactsFragment"
+        android:name="ru.cobalt.telegram.clone.main.nav.contacts.ContactsFragment"
         android:label="@string/nav_menu_contacts" />
 
     <fragment

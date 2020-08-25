@@ -1,5 +1,9 @@
+<!DOCTYPE resources [
+    <!ENTITY app_name "Telegram Clone">
+]>
+
 <resources>
-    <string name="app_name">Telegram Clone</string>
+    <string name="app_name">&app_name;</string>
 
     <string name="frw_welcome_title_top">The world\'s <b>fastest</b> messaging app.</string>
     <string name="frw_welcome_title_bottom">It is <b>free</b> and <b>secure</b>.</string>
@@ -22,8 +26,10 @@
     <string name="nav_menu_saved_messages">Saved Messages</string>
     <string name="nav_menu_settings">Settings</string>
     <string name="nav_menu_invite_friends">Invite Friends</string>
-    <string name="nav_menu_telegram_faq">Telegram FAQ</string>
+    <string name="nav_menu_telegram_faq">&app_name; FAQ</string>
 
-    <string name="chats_start_title">Welcome to Telegram</string>
+    <string name="chats_start_title">Welcome to &app_name;</string>
     <string name="chats_start_help_to_start_message">Start messaging by tapping the pencil button in the bottom right corner</string>
+    <string name="chats_start_contacts_list_title">Your contacts on &app_name;</string>
+    <string name="calls_start_text">You haven\'t made any calls yet.</string>
 </resources>
