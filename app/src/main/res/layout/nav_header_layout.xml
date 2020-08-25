@@ -17,7 +17,7 @@
         <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:src="@drawable/placeholder_photo" />
+            android:src="@drawable/default_photo" />
 
     </androidx.cardview.widget.CardView>
 
