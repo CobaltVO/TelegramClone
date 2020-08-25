@@ -1,6 +1,8 @@
 package ru.cobalt.telegram.clone.main.nav;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 
 import androidx.annotation.NonNull;
@@ -22,6 +24,12 @@ public class ChatsFragment extends BasicFragment {
     }
 
     @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+    }
+
+    @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
 
@@ -39,4 +47,9 @@ public class ChatsFragment extends BasicFragment {
         return out;
     }
 
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.chats_menu, menu);
+    }
 }

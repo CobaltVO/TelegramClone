@@ -20,11 +20,6 @@ public abstract class BasicFragment extends Fragment {
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
-
-    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         return inflater.inflate(layout, container, false);
@@ -62,14 +57,15 @@ public abstract class BasicFragment extends Fragment {
         toolbar.setTitle(toolbarName);
     }
 
-    protected Toolbar addBackButtonToToolbar(@NonNull View view) {
+    protected Toolbar addBackButtonOnToolbar(@NonNull View view) {
         Toolbar toolbar = view.findViewById(R.id.main_toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
         return toolbar;
     }
 
-    protected void removeBackButtonToToolbar(@NonNull View view) {
+    protected Toolbar removeBackButtonFromToolbar(@NonNull View view) {
         Toolbar toolbar = view.findViewById(R.id.main_toolbar);
         toolbar.setNavigationIcon(null);
+        return toolbar;
     }
 }

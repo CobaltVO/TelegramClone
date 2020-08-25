@@ -72,7 +72,7 @@ public class ConfirmPhoneFragment extends BasicFragment
 
         showKeyboard(view, listEditTexts[0]);
         setToolbarName(view, getString(R.string.frw_confirm_phone_toolbar_title));
-        addBackButtonToToolbar(view).setNavigationOnClickListener(v -> goToPreviousFragment());
+        addBackButtonOnToolbar(view).setNavigationOnClickListener(v -> goToPreviousFragment());
     }
 
     @Override
