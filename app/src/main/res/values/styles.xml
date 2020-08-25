@@ -33,4 +33,12 @@
         <item name="android:background">@drawable/background_input_code</item>
     </style>
 
+    <style name="button_floating_action" parent="Widget.Design.FloatingActionButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">16dp</item>
+        <item name="android:tint">@color/white</item>
+        <item name="backgroundTint">@color/accent</item>
+    </style>
+
 </resources>
